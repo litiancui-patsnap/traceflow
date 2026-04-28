@@ -76,6 +76,30 @@ cd frontend
 npm run build
 ```
 
+### Smoke Validation
+
+Traceflow now includes both backend and frontend smoke coverage for the core flow:
+
+- Requirement creation
+- Scenario creation
+- Task creation
+- Acceptance recording
+
+Backend smoke test:
+
+```powershell
+.\venv\Scripts\python -m pytest tests\integration\test_smoke_flow.py
+```
+
+Frontend smoke interaction test:
+
+```powershell
+cd frontend
+npm test
+```
+
+The frontend smoke path currently lives in `frontend/src/App.test.tsx` and the backend smoke path lives in `tests/integration/test_smoke_flow.py`.
+
 If your change only affects one area, start with the narrowest relevant validation and then run broader checks when appropriate.
 
 ## Contribution Guidelines

@@ -9,7 +9,7 @@ def test_root_endpoint_returns_app_name() -> None:
     response = client.get("/")
 
     assert response.status_code == 200
-    assert response.json()["message"] == "Spec Driven Delivery Tool"
+    assert response.json()["message"] == "Traceflow"
 
 
 def test_health_endpoint_returns_basic_runtime_info() -> None:
