@@ -1,4 +1,5 @@
 import type { TaskBreakdownDraftResponse } from "../types";
+import { copy } from "../copy";
 
 interface TaskDraftEditorProps {
   draft: TaskBreakdownDraftResponse | null;
@@ -20,20 +21,20 @@ export function TaskDraftEditor(props: TaskDraftEditorProps) {
   return (
     <>
       <button type="button" onClick={onGenerate} disabled={loading}>
-        {loading ? "Generating..." : "Generate Task Draft"}
+        {loading ? copy.workspace.draft.loading : copy.workspace.draft.task.generateButton}
       </button>
       {draft ? (
         <div className="stack compact">
           {draft.tasks.map((item, index) => (
             <div key={`${item.title}-${index}`} className="stack compact draft-item">
               <div className="inline-actions">
-                <strong>Draft Task {index + 1}</strong>
+                <strong>{copy.workspace.draft.task.itemTitle(index + 1)}</strong>
                 <button type="button" className="ghost-button" onClick={() => removeItem(index)}>
-                  Remove
+                  {copy.workspace.draft.task.removeButton}
                 </button>
               </div>
               <input
-                aria-label={`Draft task title ${index + 1}`}
+                aria-label={copy.workspace.draft.task.titleLabel(index + 1)}
                 value={item.title}
                 onChange={(event) =>
                   onChange({
@@ -45,7 +46,7 @@ export function TaskDraftEditor(props: TaskDraftEditorProps) {
                 }
               />
               <textarea
-                aria-label={`Draft task description ${index + 1}`}
+                aria-label={copy.workspace.draft.task.descriptionLabel(index + 1)}
                 value={item.description || ""}
                 onChange={(event) =>
                   onChange({
@@ -57,7 +58,7 @@ export function TaskDraftEditor(props: TaskDraftEditorProps) {
                 }
               />
               <input
-                aria-label={`Draft task owner ${index + 1}`}
+                aria-label={copy.workspace.draft.task.ownerLabel(index + 1)}
                 value={item.owner_name || ""}
                 onChange={(event) =>
                   onChange({
@@ -69,7 +70,7 @@ export function TaskDraftEditor(props: TaskDraftEditorProps) {
                 }
               />
               <select
-                aria-label={`Draft task type ${index + 1}`}
+                aria-label={copy.workspace.draft.task.typeLabel(index + 1)}
                 value={item.task_type}
                 onChange={(event) =>
                   onChange({
@@ -90,7 +91,7 @@ export function TaskDraftEditor(props: TaskDraftEditorProps) {
           ))}
           {draft.tasks.length ? (
             <button type="button" onClick={onSaveAll}>
-              Save All Draft Tasks
+              {copy.workspace.draft.task.saveAllButton}
             </button>
           ) : null}
         </div>

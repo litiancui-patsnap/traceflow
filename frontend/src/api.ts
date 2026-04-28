@@ -1,5 +1,6 @@
 import type {
   AcceptanceRun,
+  DashboardSummaryResponse,
   GitHubLink,
   RequirementDetailResponse,
   Requirement,
@@ -24,7 +25,7 @@ async function request<T>(path: string, options?: RequestInit): Promise<T> {
 
   if (!response.ok) {
     const message = await response.text();
-    throw new Error(message || `Request failed: ${response.status}`);
+    throw new Error(message || `请求失败：${response.status}`);
   }
 
   if (response.status === 204) {
@@ -35,6 +36,7 @@ async function request<T>(path: string, options?: RequestInit): Promise<T> {
 }
 
 export const api = {
+  getDashboardSummary: () => request<DashboardSummaryResponse>("/api/dashboard/summary"),
   listRequirements: () => request<Requirement[]>("/api/requirements"),
   createRequirement: (payload: Partial<Requirement>) =>
     request<Requirement>("/api/requirements", {

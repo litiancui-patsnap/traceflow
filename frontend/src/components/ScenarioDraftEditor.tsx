@@ -1,4 +1,5 @@
 import type { ScenarioDraftResponse } from "../types";
+import { copy } from "../copy";
 
 interface ScenarioDraftEditorProps {
   draft: ScenarioDraftResponse | null;
@@ -20,25 +21,25 @@ export function ScenarioDraftEditor(props: ScenarioDraftEditorProps) {
   return (
     <>
       <button type="button" onClick={onGenerate} disabled={loading}>
-        {loading ? "Generating..." : "Generate Scenario Draft"}
+        {loading ? copy.workspace.draft.loading : copy.workspace.draft.scenario.generateButton}
       </button>
       {draft ? (
         <div className="stack compact">
           <input
-            aria-label="Draft feature name"
+            aria-label={copy.workspace.draft.scenario.featureNameLabel}
             value={draft.feature_name}
             onChange={(event) => onChange({ ...draft, feature_name: event.target.value })}
           />
           {draft.scenarios.map((item, index) => (
             <div key={`${item.scenario_title}-${index}`} className="stack compact draft-item">
               <div className="inline-actions">
-                <strong>Draft Scenario {index + 1}</strong>
+                <strong>{copy.workspace.draft.scenario.itemTitle(index + 1)}</strong>
                 <button type="button" className="ghost-button" onClick={() => removeItem(index)}>
-                  Remove
+                  {copy.workspace.draft.scenario.removeButton}
                 </button>
               </div>
               <input
-                aria-label={`Draft scenario title ${index + 1}`}
+                aria-label={copy.workspace.draft.scenario.titleLabel(index + 1)}
                 value={item.scenario_title}
                 onChange={(event) =>
                   onChange({
@@ -52,7 +53,7 @@ export function ScenarioDraftEditor(props: ScenarioDraftEditorProps) {
                 }
               />
               <textarea
-                aria-label={`Draft scenario given ${index + 1}`}
+                aria-label={copy.workspace.draft.scenario.givenLabel(index + 1)}
                 value={item.given_text || ""}
                 onChange={(event) =>
                   onChange({
@@ -64,7 +65,7 @@ export function ScenarioDraftEditor(props: ScenarioDraftEditorProps) {
                 }
               />
               <textarea
-                aria-label={`Draft scenario when ${index + 1}`}
+                aria-label={copy.workspace.draft.scenario.whenLabel(index + 1)}
                 value={item.when_text || ""}
                 onChange={(event) =>
                   onChange({
@@ -76,7 +77,7 @@ export function ScenarioDraftEditor(props: ScenarioDraftEditorProps) {
                 }
               />
               <textarea
-                aria-label={`Draft scenario then ${index + 1}`}
+                aria-label={copy.workspace.draft.scenario.thenLabel(index + 1)}
                 value={item.then_text || ""}
                 onChange={(event) =>
                   onChange({
@@ -91,7 +92,7 @@ export function ScenarioDraftEditor(props: ScenarioDraftEditorProps) {
           ))}
           {draft.scenarios.length ? (
             <button type="button" onClick={onSaveAll}>
-              Save All Draft Scenarios
+              {copy.workspace.draft.scenario.saveAllButton}
             </button>
           ) : null}
         </div>
