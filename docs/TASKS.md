@@ -206,6 +206,77 @@ Acceptance:
   - add task
   - record acceptance
 
+### T-025 Build dashboard summary page
+
+- add dashboard route or top-level panel
+- render summary cards
+- render requirement summary table
+- support click-through to requirement detail
+
+Acceptance:
+
+- user can open one page and identify blocked, accepted, and underdefined requirements quickly
+- user can drill into any requirement from the summary page
+
+Suggested implementation breakdown:
+
+### T-025A Add dashboard summary view shell
+
+- add dashboard route or top-level panel entry
+- create read-only summary page layout
+- keep current requirement detail workbench intact
+
+Acceptance:
+
+- user can open a dedicated dashboard summary view from the main UI
+- dashboard layout renders without breaking the existing requirement workflow
+
+### T-025B Build frontend summary cards and requirement table
+
+- render top summary cards
+- render requirement summary table
+- show requirement status, scenario count, task count, latest acceptance, and last updated time
+
+Acceptance:
+
+- user can scan requirement-level summary information from one page
+- each requirement row exposes the core progress signals without opening detail first
+
+### T-025C Add dashboard drill-down and lightweight filters
+
+- support click-through from summary row to requirement detail
+- add lightweight filters for status, acceptance, and missing traceability
+- support clearing filters in one action
+
+Acceptance:
+
+- user can narrow the dashboard to blocked, accepted, or underdefined requirements quickly
+- user can jump from the dashboard into the existing requirement detail flow
+
+### T-025D Add derived health and attention-needed sections
+
+- add dedicated `GET /api/dashboard/summary`
+- move summary aggregation and derived state logic into backend service layer
+- return aggregate counts and requirement summary rows from one backend endpoint
+
+Acceptance:
+
+- frontend can render dashboard data from one summary endpoint
+- derived dashboard counts are computed consistently in backend
+- API tests cover summary aggregation and edge cases for missing traceability
+
+### T-025E Add derived health, executive summary, and attention-needed sections
+
+- derive dashboard-facing health and risk signals such as missing scenarios, missing tasks, accepted, and at-risk work
+- render leadership-oriented summary copy, metric guidance, attention-needed items, and recommended actions
+- keep dashboard readable for business, delivery, and release stakeholders without opening each requirement first
+
+Acceptance:
+
+- user can identify the highest-risk requirements without inspecting every row manually
+- business and leadership roles can understand what the top metrics mean and what action is needed next
+- dashboard highlights accepted scope, definition gaps, and blocked work clearly
+
 ## 10. TDD Priorities
 
 The following modules should be built test-first:

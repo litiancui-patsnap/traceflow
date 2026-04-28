@@ -9,6 +9,13 @@ from app.api.schemas.ai import (
     TaskBreakdownDraftRequest,
     TaskBreakdownDraftResponse,
 )
+from app.api.schemas.dashboard import (
+    DashboardAttentionItem,
+    DashboardRecommendedAction,
+    DashboardSummaryCounts,
+    DashboardSummaryResponse,
+    DashboardSummaryRow,
+)
 from app.api.schemas.github_links import GitHubLinkCreate, GitHubLinkRead
 from app.api.schemas.requirements import (
     RequirementCreate,
@@ -23,6 +30,11 @@ from app.api.schemas.tasks import TaskCreate, TaskRead, TaskUpdate
 __all__ = [
     "AcceptanceRunCreate",
     "AcceptanceRunRead",
+    "DashboardAttentionItem",
+    "DashboardRecommendedAction",
+    "DashboardSummaryCounts",
+    "DashboardSummaryResponse",
+    "DashboardSummaryRow",
     "GitHubLinkCreate",
     "GitHubLinkRead",
     "RequirementDraftRequest",

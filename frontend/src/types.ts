@@ -114,3 +114,47 @@ export interface TaskBreakdownDraftItem {
 export interface TaskBreakdownDraftResponse {
   tasks: TaskBreakdownDraftItem[];
 }
+
+export interface DashboardRequirementSummary {
+  id: number;
+  title: string;
+  status: string;
+  scenario_count: number;
+  task_count: number;
+  latest_acceptance_status: string;
+  latest_test_summary_result: string;
+  health: string;
+  needs_attention: boolean;
+  updated_at: string;
+}
+
+export interface DashboardSummaryCounts {
+  total_requirements: number;
+  draft_requirements: number;
+  ready_requirements: number;
+  accepted_requirements: number;
+  at_risk_requirements: number;
+  missing_scenarios_requirements: number;
+  missing_tasks_requirements: number;
+  in_progress_requirements: number;
+  ready_for_review_requirements: number;
+}
+
+export interface DashboardAttentionItem {
+  id: number;
+  title: string;
+  health: string;
+  summary: string;
+}
+
+export interface DashboardRecommendedAction {
+  owner: string;
+  summary: string;
+}
+
+export interface DashboardSummaryResponse {
+  counts: DashboardSummaryCounts;
+  rows: DashboardRequirementSummary[];
+  attention_needed: DashboardAttentionItem[];
+  recommended_actions: DashboardRecommendedAction[];
+}
