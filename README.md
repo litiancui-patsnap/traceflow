@@ -6,6 +6,20 @@ Traceflow helps small product teams turn raw ideas into structured requirements,
 
 For a quick status handoff after session loss, see `docs/SESSION_RECOVERY.md`.
 
+## Project Background
+
+- Repository name: `openai_agents_demo`
+- Product name in this repo: `Traceflow`
+- Product type: lightweight requirement traceability and delivery workspace for small teams
+
+Traceflow is designed to keep one requirement connected to its related BDD scenarios, delivery tasks, acceptance records, GitHub links, and test summaries.
+
+This repository is not a news aggregation bot, Feishu/Lark daily report sender, BI analytics dashboard, or infrastructure monitoring system. Its current AI features are limited to draft generation for requirements, scenarios, and task breakdowns.
+
+If you revisit this repo later and forget its purpose, the shortest description is:
+
+> Traceflow is an AI-assisted requirement-to-delivery traceability tool, not a Feishu news bot or ops monitoring platform.
+
 ## Why Traceflow
 
 Product delivery information is often scattered across chat, docs, issue trackers, pull requests, and test notes. Traceflow brings those pieces together so teams can keep requirement intent, implementation progress, and validation results connected.
