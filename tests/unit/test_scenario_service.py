@@ -3,8 +3,8 @@ from sqlalchemy.pool import StaticPool
 from sqlmodel import Session, SQLModel, create_engine
 
 import app.domain.models  # noqa: F401
-from app.api.schemas.requirements import RequirementCreate
-from app.api.schemas.scenarios import ScenarioCreate, ScenarioUpdate
+from app.domain.dto.requirements import RequirementCreate
+from app.domain.dto.scenarios import ScenarioCreate, ScenarioUpdate
 from app.domain.services.requirement import RequirementService
 from app.domain.services.scenario import ScenarioNotFoundError, ScenarioService
 

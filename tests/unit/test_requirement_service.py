@@ -3,7 +3,7 @@ from sqlmodel import Session, SQLModel, create_engine
 from sqlalchemy.pool import StaticPool
 
 import app.domain.models  # noqa: F401
-from app.api.schemas.requirements import RequirementCreate, RequirementUpdate
+from app.domain.dto.requirements import RequirementCreate, RequirementUpdate
 from app.domain.services.requirement import RequirementNotFoundError, RequirementService
 
 

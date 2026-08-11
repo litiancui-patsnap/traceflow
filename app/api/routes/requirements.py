@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlmodel import Session
 
-from app.api.schemas.requirements import (
+from app.domain.dto.requirements import (
     RequirementCreate,
     RequirementDetailResponse,
     RequirementRead,

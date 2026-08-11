@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, Response, status
 from sqlmodel import Session
 
-from app.api.schemas.scenarios import ScenarioCreate, ScenarioRead, ScenarioUpdate
+from app.domain.dto.scenarios import ScenarioCreate, ScenarioRead, ScenarioUpdate
 from app.core.database import get_session
 from app.domain.services.requirement import RequirementNotFoundError
 from app.domain.services.scenario import ScenarioNotFoundError, ScenarioService

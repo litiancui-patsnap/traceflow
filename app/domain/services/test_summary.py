@@ -1,6 +1,6 @@
 from sqlmodel import Session
 
-from app.api.schemas.test_summaries import TestSummaryCreate
+from app.domain.dto.test_summaries import TestSummaryCreate
 from app.domain.models.test_summary import TestSummary
 from app.domain.repositories.test_summary import TestSummaryRepository
 from app.domain.services.requirement import RequirementService

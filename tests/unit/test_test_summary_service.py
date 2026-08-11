@@ -3,8 +3,8 @@ from sqlalchemy.pool import StaticPool
 from sqlmodel import Session, SQLModel, create_engine
 
 import app.domain.models  # noqa: F401
-from app.api.schemas.requirements import RequirementCreate
-from app.api.schemas.test_summaries import TestSummaryCreate as SummaryCreateSchema
+from app.domain.dto.requirements import RequirementCreate
+from app.domain.dto.test_summaries import TestSummaryCreate as SummaryCreateSchema
 from app.domain.services.requirement import RequirementService
 from app.domain.services.test_summary import (
     InvalidTestSummaryError,

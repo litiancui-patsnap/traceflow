@@ -1,6 +1,6 @@
 from sqlmodel import Session
 
-from app.api.schemas.scenarios import ScenarioCreate, ScenarioUpdate
+from app.domain.dto.scenarios import ScenarioCreate, ScenarioUpdate
 from app.domain.models.scenario import Scenario
 from app.domain.repositories.scenario import ScenarioRepository
 from app.domain.services.requirement import RequirementService

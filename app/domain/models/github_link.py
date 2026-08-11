@@ -1,10 +1,8 @@
-from datetime import datetime, timezone
+from datetime import datetime
 
 from sqlmodel import Field, SQLModel
 
-
-def utc_now() -> datetime:
-    return datetime.now(timezone.utc)
+from app.core.utils import utc_now
 
 
 class GitHubLink(SQLModel, table=True):

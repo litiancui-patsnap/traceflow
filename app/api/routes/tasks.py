@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, Response, status
 from sqlmodel import Session
 
-from app.api.schemas.tasks import TaskCreate, TaskRead, TaskUpdate
+from app.domain.dto.tasks import TaskCreate, TaskRead, TaskUpdate
 from app.core.database import get_session
 from app.domain.services.requirement import RequirementNotFoundError
 from app.domain.services.scenario import ScenarioNotFoundError

@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 
 from app.ai.client import get_llm_client
 from app.ai.services import AIDraftParsingError, AIDraftService
-from app.api.schemas.ai import (
+from app.domain.dto.ai import (
     RequirementDraftRequest,
     RequirementDraftResponse,
     ScenarioDraftRequest,

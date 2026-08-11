@@ -3,8 +3,8 @@ from sqlalchemy.pool import StaticPool
 from sqlmodel import Session, SQLModel, create_engine
 
 import app.domain.models  # noqa: F401
-from app.api.schemas.acceptance_runs import AcceptanceRunCreate
-from app.api.schemas.requirements import RequirementCreate
+from app.domain.dto.acceptance_runs import AcceptanceRunCreate
+from app.domain.dto.requirements import RequirementCreate
 from app.domain.services.acceptance_run import (
     AcceptanceRunService,
     InvalidAcceptanceStatusError,

@@ -9,7 +9,7 @@ from app.ai.prompts import (
     build_scenario_prompt,
     build_task_breakdown_prompt,
 )
-from app.api.schemas.ai import (
+from app.domain.dto.ai import (
     RequirementDraftRequest,
     RequirementDraftResponse,
     ScenarioDraft,

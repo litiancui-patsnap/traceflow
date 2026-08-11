@@ -1,6 +1,6 @@
 from sqlmodel import Session
 
-from app.api.schemas.acceptance_runs import AcceptanceRunCreate
+from app.domain.dto.acceptance_runs import AcceptanceRunCreate
 from app.domain.models.acceptance_run import AcceptanceRun
 from app.domain.repositories.acceptance_run import AcceptanceRunRepository
 from app.domain.services.requirement import RequirementService

@@ -1,6 +1,6 @@
 from sqlmodel import Session
 
-from app.api.schemas.tasks import TaskCreate, TaskUpdate
+from app.domain.dto.tasks import TaskCreate, TaskUpdate
 from app.domain.models.task import Task
 from app.domain.repositories.task import TaskRepository
 from app.domain.services.requirement import RequirementService

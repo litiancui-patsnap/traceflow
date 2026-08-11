@@ -1,6 +1,6 @@
 from sqlmodel import Session
 
-from app.api.schemas.requirements import RequirementCreate, RequirementUpdate
+from app.domain.dto.requirements import RequirementCreate, RequirementUpdate
 from app.domain.models.requirement import Requirement
 from app.domain.repositories.requirement import RequirementRepository
 

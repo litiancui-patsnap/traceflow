@@ -1,7 +1,7 @@
 import pytest
 
 from app.ai.services import AIDraftParsingError, AIDraftService
-from app.api.schemas.ai import (
+from app.domain.dto.ai import (
     RequirementDraftRequest,
     ScenarioDraftRequest,
     TaskBreakdownDraftRequest,

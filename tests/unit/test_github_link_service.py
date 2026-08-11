@@ -3,9 +3,9 @@ from sqlalchemy.pool import StaticPool
 from sqlmodel import Session, SQLModel, create_engine
 
 import app.domain.models  # noqa: F401
-from app.api.schemas.github_links import GitHubLinkCreate
-from app.api.schemas.requirements import RequirementCreate
-from app.api.schemas.tasks import TaskCreate
+from app.domain.dto.github_links import GitHubLinkCreate
+from app.domain.dto.requirements import RequirementCreate
+from app.domain.dto.tasks import TaskCreate
 from app.domain.services.github_link import InvalidGitHubLinkError, GitHubLinkService
 from app.domain.services.requirement import RequirementService
 from app.domain.services.task import TaskService

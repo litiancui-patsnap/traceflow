@@ -1,4 +1,4 @@
-from app.api.schemas.dashboard import (
+from app.domain.dto.dashboard import (
     DashboardAttentionItem,
     DashboardRecommendedAction,
     DashboardSummaryCounts,

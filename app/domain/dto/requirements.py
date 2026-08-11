@@ -2,11 +2,11 @@ from datetime import datetime
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from app.api.schemas.acceptance_runs import AcceptanceRunRead
-from app.api.schemas.github_links import GitHubLinkRead
-from app.api.schemas.scenarios import ScenarioRead
-from app.api.schemas.tasks import TaskRead
-from app.api.schemas.test_summaries import TestSummaryRead
+from app.domain.dto.acceptance_runs import AcceptanceRunRead
+from app.domain.dto.github_links import GitHubLinkRead
+from app.domain.dto.scenarios import ScenarioRead
+from app.domain.dto.tasks import TaskRead
+from app.domain.dto.test_summaries import TestSummaryRead
 
 
 class RequirementBase(BaseModel):

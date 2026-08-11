@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlmodel import Session
 
-from app.api.schemas.test_summaries import TestSummaryCreate, TestSummaryRead
+from app.domain.dto.test_summaries import TestSummaryCreate, TestSummaryRead
 from app.core.database import get_session
 from app.domain.services.requirement import RequirementNotFoundError
 from app.domain.services.test_summary import InvalidTestSummaryError, TestSummaryService

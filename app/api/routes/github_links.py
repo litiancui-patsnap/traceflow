@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, Response, status
 from sqlmodel import Session
 
-from app.api.schemas.github_links import GitHubLinkCreate, GitHubLinkRead
+from app.domain.dto.github_links import GitHubLinkCreate, GitHubLinkRead
 from app.core.database import get_session
 from app.domain.services.github_link import (
     GitHubLinkNotFoundError,

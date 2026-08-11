@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlmodel import Session
 
-from app.api.schemas.acceptance_runs import AcceptanceRunCreate, AcceptanceRunRead
+from app.domain.dto.acceptance_runs import AcceptanceRunCreate, AcceptanceRunRead
 from app.core.database import get_session
 from app.domain.services.acceptance_run import (
     AcceptanceRunService,

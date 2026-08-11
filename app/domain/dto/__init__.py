@@ -1,5 +1,5 @@
-from app.api.schemas.acceptance_runs import AcceptanceRunCreate, AcceptanceRunRead
-from app.api.schemas.ai import (
+from app.domain.dto.acceptance_runs import AcceptanceRunCreate, AcceptanceRunRead
+from app.domain.dto.ai import (
     RequirementDraftRequest,
     RequirementDraftResponse,
     ScenarioDraft,
@@ -9,23 +9,23 @@ from app.api.schemas.ai import (
     TaskBreakdownDraftRequest,
     TaskBreakdownDraftResponse,
 )
-from app.api.schemas.dashboard import (
+from app.domain.dto.dashboard import (
     DashboardAttentionItem,
     DashboardRecommendedAction,
     DashboardSummaryCounts,
     DashboardSummaryResponse,
     DashboardSummaryRow,
 )
-from app.api.schemas.github_links import GitHubLinkCreate, GitHubLinkRead
-from app.api.schemas.requirements import (
+from app.domain.dto.github_links import GitHubLinkCreate, GitHubLinkRead
+from app.domain.dto.requirements import (
     RequirementCreate,
     RequirementDetailResponse,
     RequirementRead,
     RequirementUpdate,
 )
-from app.api.schemas.scenarios import ScenarioCreate, ScenarioRead, ScenarioUpdate
-from app.api.schemas.test_summaries import TestSummaryCreate, TestSummaryRead
-from app.api.schemas.tasks import TaskCreate, TaskRead, TaskUpdate
+from app.domain.dto.scenarios import ScenarioCreate, ScenarioRead, ScenarioUpdate
+from app.domain.dto.test_summaries import TestSummaryCreate, TestSummaryRead
+from app.domain.dto.tasks import TaskCreate, TaskRead, TaskUpdate
 
 __all__ = [
     "AcceptanceRunCreate",

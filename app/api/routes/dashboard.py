@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 from sqlmodel import Session
 
-from app.api.schemas.dashboard import DashboardSummaryResponse
+from app.domain.dto.dashboard import DashboardSummaryResponse
 from app.core.database import get_session
 from app.domain.services.acceptance_run import AcceptanceRunService
 from app.domain.services.dashboard import DashboardService

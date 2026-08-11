@@ -1,6 +1,6 @@
 from sqlmodel import Session
 
-from app.api.schemas.github_links import GitHubLinkCreate
+from app.domain.dto.github_links import GitHubLinkCreate
 from app.domain.models.github_link import GitHubLink
 from app.domain.repositories.github_link import GitHubLinkRepository
 from app.domain.services.requirement import RequirementService
